@@ -24,7 +24,7 @@ class listings(APIView):
 			if filters == key:
 				filters = value
 		try:
-			response = requests.get('https://instawork.com/react/get_jobs?filters='+filters+'&locality='+city+'&page=1')
+			response = requests.get('https://instawork.com/react/get_jobs?filters='+filters+'&locality='+city+'&page=1').json()
 			return Response(response)
 		except:
 			return('internal errror!')
