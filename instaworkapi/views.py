@@ -22,7 +22,7 @@ class listings(APIView):
 			city=city
 		for key, value in filterDictionary.iteritems():
 			if filters == key:
-				filters=value
+				filters = value
 		try:
 			response = requests.get('https://instawork.com/react/get_jobs?filters='+filters+'&locality='+city+'&page=1')
 			return Response(response)
